@@ -1,0 +1,9 @@
+<template name="main">
+    {{#if userName}}
+        {{> room}}
+    {{/if}}
+
+    {{#unless userName}}
+        {{> user}}
+    {{/unless}}
+</template>

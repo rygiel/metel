@@ -19,77 +19,10 @@
     
 </body>
 
-<template name="main">
-    {{#if user}}
-        {{> room}}
-    {{/if}}
-
-    {{#unless userName}}
-        {{> user}}
-    {{/unless}}
-</template>
 
 
-<template name="user" >
-    
-    <div class="col-xs-12 col-md-8"> 
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-            <i class="fa fa-comments fa-fw"></i>
-            Chat
-
-                <div class="input-group">
-                    <input id="user" type="text" class="form-control input-sm" placeholder="Enter your name..." />
-                    <span class="input-group-btn">
-                        <button class="btn btn-warning btn-sm" id="btn-user">
-                            Send
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    
-</template>
 
 
-<template name="rooms">
-  <div class="roomList">
-    <h2>Chat rooms</h2>
-    <p><button type="button" id="addRoom">Add new room</button></p>
-    <ul>
-        {{#each availableRooms}}
-            {{> roomItem}}
-        {{/each}}
-    </ul>
-  </div>
-</template>
-
-<template name="roomItem">
-    <li class="roomItem">
-        {{room}} <button class="enter">Enter</button> <button class="delete">Delete</button>
-    </li>
-</template>
-
-<template name="room">
-    <div class="roomScreen">
-    <h2>Room &quot;{{roomName}}&quot;</h2>
-    <ul id="messages">
-        {{#each messages}}
-            <li><span class="author{{authorClass}}">{{author}} [{{timestamp}}]:</span> {{text}}</li>
-        {{/each}}
-    </ul>
-    <form action="javascript:void(0)">
-        <label for="msg">Message: </label>
-        <input id="msg" />
-        <button type="submit">&rArr; Send</button>
-        <button type="button" id="leave">Leave</button>
-    </form>
-    </div>
-</template>
 
 
 <template name="xxyyz">

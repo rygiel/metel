@@ -1,0 +1,16 @@
+<template name="room">
+    <div class="roomScreen">
+    <h2>Room &quot;{{roomName}}&quot;</h2>
+    <ul id="messages">
+        {{#each messages}}
+            <li><span class="author{{authorClass}}">{{author}} [{{timestamp}}]:</span> {{text}}</li>
+        {{/each}}
+    </ul>
+    <form action="javascript:void(0)">
+        <label for="msg">Message: </label>
+        <input id="msg" />
+        <button type="submit">&rArr; Send</button>
+        <button type="button" id="leave">Leave</button>
+    </form>
+    </div>
+</template>
